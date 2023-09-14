@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema(
             required:[true, "please complete the field"]
         
         },
+        activities:[{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Activity'
+        }]
        
         
     },

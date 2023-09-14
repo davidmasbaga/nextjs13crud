@@ -19,7 +19,7 @@ export const POST = async (req,res) => {
 export const GET = async (req, res) => {
 await connectDB()
 try {
-    const result = await UserModel.find({})
+    const result = await UserModel.find({}).populate('activities')
     return NextResponse.json({data:result}, {status:200})
     
 } catch (error) {
